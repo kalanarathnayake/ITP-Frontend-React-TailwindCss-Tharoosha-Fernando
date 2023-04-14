@@ -110,14 +110,13 @@ export class DocumentList extends Component {
         })
     }
 
-
+    //Search feature start
     searchDocumentList() {
         return this.state.document.map((currentdocument) => {
             if (
                 this.state.searchDocument == currentdocument.docName
             ) {
                 return (
-
                     <tr className='text-lg bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600'>
                         <td className='w-10 px-6 py-4 overflow-x-auto text-xl font-bold'>{currentdocument.docName}</td>
                         <td className='px-6 py-4'>{currentdocument.category}</td>
@@ -176,7 +175,8 @@ export class DocumentList extends Component {
                                             </div>
                                             <div class="">
                                                 Delete
-                                            </div>                                        </button>
+                                            </div>
+                                        </button>
                                     }
                                 </div>
                             </div>
@@ -186,7 +186,10 @@ export class DocumentList extends Component {
             }
         });
     }
+    //Search feature ends
 
+
+    //PDF export feature start
     exportDocument = () => {
         console.log("Exporting PDF")
         const unit = "pt";
@@ -217,6 +220,8 @@ export class DocumentList extends Component {
         doc.autoTable(content);
         doc.save("Document-list.pdf")
     }
+    //PDF export feature end
+
 
     render() {
         return (
@@ -261,7 +266,7 @@ export class DocumentList extends Component {
                                                 <input
                                                     className="form-control rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"
                                                     type="text"
-                                                    placeholder="Search by first name"
+                                                    placeholder="Document name"
                                                     aria-label="Search"
                                                     onChange={(e) => {
                                                         this.setState({
@@ -288,7 +293,7 @@ export class DocumentList extends Component {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {this.state.searchDocument == "" ? this.documentList() : this.searchDocumentList()}
+                                        {this.state.searchDocument === "" ? this.documentList() : this.searchDocumentList()}
                                     </tbody>
                                 </table>
                             </div>

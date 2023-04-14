@@ -83,7 +83,7 @@ export default class EditDocument extends Component {
             createdEmp: this.state.createdEmp,
             empTitle: this.state.empTitle,
         }
-        
+
         console.log(document);
         axios.put('http://localhost:5000/api/document/' + this.props.documentId, document)
             .then(res => {
@@ -144,14 +144,20 @@ export default class EditDocument extends Component {
 
                                                     /><p />
                                                 </div>
-                                                <div className="form-group">
-                                                    <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white' >Category : </label>
-                                                    <input type="text"
+
+                                                <div className="form-group ">
+                                                    <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white' for="grid-state">Category : </label>
+                                                    <select type="text"
                                                         required
                                                         className="form-control"
                                                         value={this.state.category}
                                                         onChange={this.onChangeCategory}
-                                                    /><p />
+                                                    >
+                                                        <option>Contracts</option>
+                                                        <option>Financial</option>
+                                                        <option>Transactional</option>
+                                                        <option>Report</option>
+                                                    </select><p />
                                                 </div>
                                             </div>
                                             <div class="grid grid-cols-2 gap-4 form-group">

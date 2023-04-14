@@ -94,13 +94,12 @@ export class CreateDocument extends Component {
 
     clearData = () => {
         this.setState({
-            firstName: '',
-            lastName: '',
-            age: '',
-            address: '',
-            phone: '',
-            dob: '',
-            department: ''
+            docName: '',
+            category: '',
+            date: '',
+            description: '',
+            createdEmp: '',
+            empTitle: '',
         })
     }
 
@@ -123,22 +122,12 @@ export class CreateDocument extends Component {
                                                     <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Document Name : </label>
                                                     <input type="text"
                                                         required
-                                                        placeholder=''
+                                                        placeholder='Invoice_1254'
                                                         className="form-control "
                                                         value={this.state.docName}
                                                         onChange={this.onChangeDocName}
                                                     /><p />
                                                 </div>
-                                                {/* <div className="form-group">
-                                                    <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Category : </label>
-                                                    <input type="text"
-                                                        required
-                                                        placeholder=''
-                                                        className="form-control"
-                                                        value={this.state.category}
-                                                        onChange={this.onChangeCategory}
-                                                    /><p />
-                                                </div> */}
                                                 <div className="form-group ">
                                                     <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white' for="grid-state">Category : </label>
                                                     <select type="text"
@@ -147,11 +136,10 @@ export class CreateDocument extends Component {
                                                         value={this.state.category}
                                                         onChange={this.onChangeCategory}
                                                     >
-                                                        <option>Department 1</option>
-                                                        <option>Department 2</option>
-                                                        <option>Department 3</option>
-                                                        <option>Department 4</option>
-                                                        <option>Department 5</option>
+                                                        <option>Contracts</option>
+                                                        <option>Financial</option>
+                                                        <option>Transactional</option>
+                                                        <option>Report</option>
                                                     </select><p />
                                                 </div>
                                             </div>
@@ -168,9 +156,9 @@ export class CreateDocument extends Component {
                                                 </div>
                                                 <div className="form-group">
                                                     <label for="large-input" className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>description : </label>
-                                                    <input textarea="text"
+                                                    <textarea type="text"
                                                         required
-                                                        placeholder=''
+                                                        placeholder='Description about the document'
                                                         className="form-control"
                                                         value={this.state.description}
                                                         onChange={this.onChangeDescription}
@@ -180,9 +168,9 @@ export class CreateDocument extends Component {
 
                                             <div className="form-group">
                                                 <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Created Employee Name : </label>
-                                                <textarea type="text"
+                                                <input type="text"
                                                     required
-                                                    placeholder=''
+                                                    placeholder='Created employee first name and last name'
                                                     className="form-control"
                                                     value={this.state.createdEmp}
                                                     onChange={this.onChangeCreatedEmp}
