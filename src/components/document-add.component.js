@@ -129,7 +129,7 @@ export class CreateDocument extends Component {
                                                         onChange={this.onChangeDocName}
                                                     /><p />
                                                 </div>
-                                                <div className="form-group">
+                                                {/* <div className="form-group">
                                                     <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Category : </label>
                                                     <input type="text"
                                                         required
@@ -138,6 +138,21 @@ export class CreateDocument extends Component {
                                                         value={this.state.category}
                                                         onChange={this.onChangeCategory}
                                                     /><p />
+                                                </div> */}
+                                                <div className="form-group ">
+                                                    <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white' for="grid-state">Category : </label>
+                                                    <select type="text"
+                                                        required
+                                                        className="form-control"
+                                                        value={this.state.category}
+                                                        onChange={this.onChangeCategory}
+                                                    >
+                                                        <option>Department 1</option>
+                                                        <option>Department 2</option>
+                                                        <option>Department 3</option>
+                                                        <option>Department 4</option>
+                                                        <option>Department 5</option>
+                                                    </select><p />
                                                 </div>
                                             </div>
                                             <div className="grid grid-cols-2 gap-4 form-group">
@@ -150,7 +165,7 @@ export class CreateDocument extends Component {
                                                             onChange={this.onChangeDate}
                                                         />
                                                     </div>
-                                                </div><p />
+                                                </div>
                                                 <div className="form-group">
                                                     <label for="large-input" className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>description : </label>
                                                     <input textarea="text"
@@ -176,7 +191,7 @@ export class CreateDocument extends Component {
 
                                             <div className="form-group">
                                                 <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white'>Employee Title : </label>
-                                                <textarea type="text"
+                                                <input type="text"
                                                     required
                                                     placeholder=''
                                                     className="form-control"
@@ -184,22 +199,6 @@ export class CreateDocument extends Component {
                                                     onChange={this.onChangeEmpTitle}
                                                 /><p />
                                             </div>
-
-                                            {/* <div className="form-group ">
-                                                <label className='block mb-2 text-lg font-medium text-gray-900 dark:text-white' for="grid-state">Department : </label>
-                                                <select type="text"
-                                                    required
-                                                    className="form-control"
-                                                    value={this.state.department}
-                                                    onChange={this.onChangeempdepartment}
-                                                >
-                                                    <option>Department 1</option>
-                                                    <option>Department 2</option>
-                                                    <option>Department 3</option>
-                                                    <option>Department 4</option>
-                                                    <option>Department 5</option>
-                                                </select><p />
-                                            </div> */}
 
                                             <div className="text-center align-middle form-group">
                                                 <input className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800' type="submit" value="Create Document" />
